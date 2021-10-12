@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addMovieButton: UIButton!
@@ -23,13 +23,27 @@ class ViewController: UIViewController {
     var ratings = [5, 3, 5]
     var data = ["Jaws","Booksmart", "Whiplash"]
     
+    //KEYBOARD
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         alertView.isHidden = true
         tableView.delegate = self
         tableView.dataSource = self
+        movieTextField.delegate = self
         
+        //Dismiss keyboard when user taps outside
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
 
@@ -68,6 +82,7 @@ class ViewController: UIViewController {
         fiveStarButton.setImage(UIImage(systemName: "star"), for: .normal)
         movieTextField.text = ""
     }
+
     
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
         alertView.isHidden = true
@@ -85,8 +100,6 @@ class ViewController: UIViewController {
         alertView.isHidden = true
         resetAlertView()
     }
-    
-    
     
     
 }
