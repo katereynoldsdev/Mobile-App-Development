@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Greeting</string>
+    <string name="editName">Name</string>
+    <string name="buttonText">Greeting</string>
+</resources>
