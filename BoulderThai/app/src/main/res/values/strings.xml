@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">BoulderThai</string>
+    <string name="heading">Boulder Thai</string>
+    <string name="padThai">Pad Thai</string>
+    <string name="curry">Curry</string>
+    <string name="eggRolls">Egg Rolls</string>
+    <string name="include_utensils">Include Utensils</string>
+    <string name="delivery">Delivery</string>
+    <string name="pickup">Pickup</string>
+    <string name="orderButton">Order</string>
+    <string-array name="time">
+        <item>6:00pm</item>
+        <item>6:30pm</item>
+        <item>7:00pm</item>
+        <item>7:30pm</item>
+    </string-array>
+</resources>
